@@ -1,0 +1,190 @@
+h1 {
+  color: green;
+}
+body {
+  overflow-x: hidden;
+  background-color: rgba(var(--b3f, 250, 250, 250), 1);
+}
+ul {
+  list-style-type: none;
+}
+#form-col {
+  justify-content: center;
+  padding: 50px;
+}
+.text-input input {
+  padding: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 250px;
+  height: 30px;
+}
+#img-logo {
+  width: 150px;
+  height: 60px;
+  object-fit: fill;
+  justify-self: center;
+}
+#registration-form {
+  border: #999 1px solid;
+  text-align: center;
+}
+#signup-btn {
+  padding: 0;
+}
+#login-option {
+  margin-top: 20px;
+  border: #999 1px solid;
+  width: 430px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+#navbar-list {
+  margin-top: 15px;
+}
+#navbar-list li {
+  list-style-type: none;
+  display: inline;
+  padding: 5px;
+}
+
+/* div {
+  border: 1px solid black;
+} */
+#search-form {
+  padding-left: 50px;
+  margin-top: 15px;
+}
+.navbar {
+  position: fixed;
+  border-bottom: 1px solid rgb(202, 202, 202);
+  padding-left: 30px;
+  background-color: white;
+  z-index: 2;
+  width: 100%;
+}
+#homepage-rows {
+  position: relative;
+  padding-top: 90px;
+}
+#my-feed {
+  margin-left: 40px;
+  margin-left: 40px;
+}
+#stories-container {
+  height: 120px;
+  width: 600px;
+  border: 1px solid rgb(202, 202, 202);
+  background-color: white;
+}
+#stories-img {
+  border-radius: 180px;
+  height: 70px;
+  width: 70px;
+  margin-top: 20px;
+}
+#single-post {
+  margin-top: 30px;
+  width: 600px;
+  height: auto;
+  padding-bottom: 30px;
+  border: 1px solid rgb(202, 202, 202);
+  padding-top: 15px;
+  background-color: white;
+}
+#three-dots {
+  float: right;
+  padding: 10px;
+  margin-top: 15px;
+}
+#post-logo {
+  height: 30px;
+  width: 30px;
+  border-radius: 180px;
+}
+#image-post {
+  border-top: 1px solid rgb(202, 202, 202);
+  border-bottom: 1px solid rgb(202, 202, 202);
+  width: 580px;
+  height: 400px;
+  margin: 0;
+  padding-left: 0%;
+  object-fit: fill;
+}
+#post-interactivity {
+  display: inline-flex;
+  margin-top: 5px;
+  padding: 5px;
+}
+#post-interactivity li {
+  padding: 10px;
+}
+#bookmark-image {
+  float: right;
+  padding: 10px;
+  margin-top: 15px;
+}
+.comment-section {
+  position: relative;
+  margin-top: 0;
+  border-top: 1px solid rgb(202, 202, 202);
+  background-color: white;
+}
+#smile-pic {
+  position: absolute;
+  padding-top: 10px;
+}
+#comment-form {
+  position: absolute;
+  margin-left: 30px;
+}
+#comment-form input {
+  height: 40px;
+  width: 500px;
+  border: 1px solid white;
+}
+#post {
+  float: right;
+  padding-top: 10px;
+}
+#suggestions {
+  position: fixed;
+  right: 20px;
+  margin-right: 40px;
+}
+
+#myaccount-image {
+  height: 60px;
+  width: 60px;
+  border-radius: 180px;
+}
+#account-images {
+  height: 50px;
+  width: 50px;
+  border-radius: 180px;
+}
+#side-btns {
+  position: absolute;
+  margin-top: 30px;
+  right: 5%;
+}
+#see-all {
+  position: absolute;
+  margin-top: 10px;
+  right: 5%;
+}
+#name-btns {
+  margin-top: 30px;
+}
+#follow {
+  position: absolute;
+  margin-top: 20px;
+  right: 5%;
+}
+#user {
+  margin-top: 10px;
+  margin-left: 0;
+  text-decoration: black;
+}

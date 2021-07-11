@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include "navbar.html" %}
+<div class="row" id="homepage-rows">
+  <div class="col-md-8" id="my-feed">
+    <div class="container" id="stories-container">
+      <img src="{% static 'photos/post.jpeg'%}" id="stories-img">
+      <p>Username</p>
+    </div>
+    <div class="container" id="single-post">
+      <div class="card-header" id="post-header">
+        <ul id="post-interactivity">
+          <li><a><img src="{% static 'photos/post.jpeg' %}" id="post-logo"></a></li>
+          <li><a><h5>thirathenerd</h5></a></li>
+        </ul>
+        <a><img src="{% static 'photos/three-dots-more-indicator.png'%}" id="three-dots"></a>
+      </div>
+      <div class="">
+        <img src="{% static 'photos/pexels.jpeg' %}" id="image-post">
+      </div>
+        <ul id="post-interactivity">
+          <li><a><img src="{% static 'photos/heart.png'%}"></a></li>
+          <li><a><img src="{%static 'photos/chat.png'%}"></a></li>
+          <li><a><img src="{%static 'photos/send.png'%}"></a></li>
+        </ul>
+        <img src="{% static 'photos/bookmark-white.png'%}" id="bookmark-image">
+        <div class="comment-section">
+          <img src="{% static 'photos/smile.png'%}" id="smile-pic">
+          <form id="comment-form">
+            <input type="text" placeholder="Comment">
+          </form>
+          <p><a id="post">Post</a></p>
+        </div> 
+    </div>
+  </div>
+  <div class="col-md-4" id="suggestions">
+    <div class="my-account">
+      <ul id="post-interactivity">
+        <li><a><img src="{% static 'photos/post.jpeg'%}" id="myaccount-image"></a></li>
+        <a id="name-btns">Username</a>
+        <a id="side-btns">Switch</a>
+      </ul>
+    </div>
+    <div class="">
+      <ul id="post-interactivity">
+        <li>Suggestions for you</li>
+        <a id="see-all">See all</a>
+      </ul>
+    </div>
+    <div class="other-accounts">
+      <ul id="post-interactivity">
+        <li><a><img src="{% static 'photos/post.jpeg'%}" id="account-images"></a></li>
+        <li id="user"><a>Username</a></li>
+        <a id="follow">Follow</a>
+      </ul>
+    </div>
+    
+  </div>
+</div>
+{% endblock %}
