@@ -5,4 +5,5 @@ from . import views
 # Create your views here.
 urlpatterns = [
     url("^$", views.index, name="index"),
+    url("profile/(\d+)", views.profile, name="profile"),
 ]

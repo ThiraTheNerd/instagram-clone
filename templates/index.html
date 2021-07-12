@@ -44,7 +44,7 @@
     {% if user.is_authenticated %}
     <div class="my-account">
       <ul id="post-interactivity">
-        <li><a><img src="{% static 'photos/post.jpeg'%}" id="myaccount-image"></a></li>
+        <li><a><img src="{user.profile_pic.url}" id="myaccount-image"></a></li>
         <a id="name-btns">{{user.username}}</a>
         <a id="side-btns">Switch</a>
       </ul>

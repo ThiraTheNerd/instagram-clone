@@ -7,14 +7,15 @@ from django.contrib.auth.models import User
 class Post(models.Model):
     image = models.ImageField(upload_to="posts/")
     caption = HTMLField()
-    user = models.ForeignKey(User, on_delete=CASCADE)
+    user = models.OneToOneField(User, on_delete=CASCADE)
     post_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.id}_{self.post_date}_by_{self.user.id}"
+        return f"{self.id}_{self.post_date}_by_{self.user.username}"
 
     class Meta:
-        ordering = ["image"]
+
+        ordering = ["-image"]
 
     def save_post(self):
         self.save()
