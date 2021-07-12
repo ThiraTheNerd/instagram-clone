@@ -152,7 +152,7 @@ ul {
 #suggestions {
   position: fixed;
   right: 20px;
-  margin-right: 40px;
+  margin-right: 10px;
 }
 
 #myaccount-image {
