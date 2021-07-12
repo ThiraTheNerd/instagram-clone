@@ -10,19 +10,16 @@
       <img src="{% static 'photos/friends.jpg'%}" id="profile_pic">
     </div>
     <div class="col-md-8 profile-sec" id= "profile">
-      <h3 id="profile-texts">Sammywex</h3>
+      <h3 id="profile-texts">{{profile.user.username}}</h3>
       <ul id="profile_details">
-        <li><b>12 </b> Posts</li>
+        <li><b>{{posts.count }} </b> Posts</li>
         <li><b>12 </b> Followers</li>
         <li><b>12 </b> Following</li>
       </ul>
       <br style="clear:both" />
-      <b id="profile-t">Sammuel Wekesa</b>
+      <!-- <b id="profile-t">{{profile.user.username}}</b> -->
       <div class="bio-section">
-        <p id ='profile-t'>We 💜 seeing your purchases! Tag us @(yourInstagramname), #(your hashtag)
-          Madam Ris 💚
-          Dark Queen 🇰🇪
-        </p>
+        <p id ='profile-t'>{{profile.bio}}</p>
       </div>
     </div>
   </div>
@@ -36,10 +33,9 @@
     </ul>
     <br style="clear:both" />
     <div class="flex-row">
-      <a><img src="{% static 'photos/paris.jpg'%}" id="single-image"></a>
-      <a><img src="{% static 'photos/paris.jpg'%}" id="single-image"></a>
-      <a><img src="{% static 'photos/paris.jpg'%}" id="single-image"></a>
-      <a><img src="{% static 'photos/paris.jpg'%}" id="single-image"></a>
+      {% for post in posts %}
+      <a><img src="{{post.image.url }}" id="single-image"></a>
+      {% endfor %}
     </div>
   </div>
 </div>

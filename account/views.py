@@ -12,6 +12,10 @@ def profile(request, username):
     user = User.objects.get(username=username)
     try:
         profile = Profile.objects.get(id=user.id)
+        posts = profile.posts.all()
+        print(profile.posts.all().count())
     except ObjectDoesNotExist:
         raise Http404()
-    return render(request, "registration/profile.html", {profile: profile})
+    return render(
+        request, "registration/profile.html", {"profile": profile, "posts": posts}
+    )
