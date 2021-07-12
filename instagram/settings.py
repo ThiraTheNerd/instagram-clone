@@ -154,3 +154,4 @@ django_heroku.settings(locals())
 LOGIN_REDIRECT_URL = "/"
 LOGIN_URL = reverse_lazy("login")
 LOGOUT_URL = reverse_lazy("logout")
+LOGOUT_REDIRECT_URL = "/"

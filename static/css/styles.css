@@ -49,6 +49,14 @@ ul {
   display: inline;
   padding: 5px;
 }
+#logout-dropdown {
+  margin-left: 100px;
+  text-align: center;
+}
+.dropdown-item {
+  color: black;
+  padding-bottom: 10px;
+}
 
 /* div {
   border: 1px solid black;
