@@ -41,26 +41,34 @@
     {% endfor %}
   </div>
   <div class="col-md-4" id="suggestions">
+    {% if user.is_authenticaated %}
     <div class="my-account">
       <ul id="post-interactivity">
         <li><a><img src="{% static 'photos/post.jpeg'%}" id="myaccount-image"></a></li>
-        <a id="name-btns">Username</a>
+        <a id="name-btns">{{user.username}}</a>
         <a id="side-btns">Switch</a>
       </ul>
     </div>
+    {% endif %}
     <div class="">
       <ul id="post-interactivity">
         <li>Suggestions for you</li>
         <a id="see-all">See all</a>
       </ul>
     </div>
+    {% for user in users %}
     <div class="other-accounts">
       <ul id="post-interactivity">
-        <li><a><img src="{% static 'photos/post.jpeg'%}" id="account-images"></a></li>
-        <li id="user"><a>Username</a></li>
+        <li><a><img src="{{user.profile_pic.url }}" id="account-images"></a></li>
+        <li id="user"><a>{{user.user.username}}</a></li>
         <a id="follow">Follow</a>
       </ul>
     </div>
+    {% empty %}
+    <div class="alert alert-warning">
+      <p>No suggestions for you</p>
+    </div>
+    {% endfor %}
     
   </div>
 </div>
