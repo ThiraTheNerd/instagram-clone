@@ -8,9 +8,10 @@ from .forms import RegistrationForm
 from django.core.exceptions import ObjectDoesNotExist
 
 # Create your views here.
-def profile(request, profile_id):
+def profile(request, username):
+    user = User.objects.get(username=username)
     try:
-        profile = Profile.objects.get(id=profile_id)
+        profile = Profile.objects.get(id=user.id)
     except ObjectDoesNotExist:
         raise Http404()
-    return render(request, "registration/profile.html")
+    return render(request, "registration/profile.html", {profile: profile})

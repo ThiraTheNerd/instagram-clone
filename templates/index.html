@@ -44,8 +44,8 @@
     {% if user.is_authenticated %}
     <div class="my-account">
       <ul id="post-interactivity">
-        <li><a><img src="{user.profile_pic.url}" id="myaccount-image"></a></li>
-        <a id="name-btns">{{user.username}}</a>
+        <li><a href=""><img src="{user.profile_pic.url}" id="myaccount-image"></a></li>
+        <a href="/profile/{{user.username}}" id="name-btns">{{user.username}}</a>
         <a id="side-btns">Switch</a>
       </ul>
     </div>
@@ -60,7 +60,7 @@
     <div class="other-accounts">
       <ul id="post-interactivity">
         <li><a><img src="{{user.profile_pic.url }}" id="account-images"></a></li>
-        <li id="user"><a>{{user.user.username}}</a></li>
+        <li id="user"><a href="/profile">{{user.user.username}}</a></li>
         <a id="follow">Follow</a>
       </ul>
     </div>

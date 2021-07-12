@@ -196,3 +196,53 @@ ul {
   margin-left: 0;
   text-decoration: black;
 }
+/*
+ Profile Page design
+*/
+#profile {
+  margin-top: 100px;
+}
+#profile_pic {
+  height: 180px;
+  width: 180px;
+  object-fit: fill;
+  border-radius: 120px;
+  margin-left: 200px;
+}
+
+#profile_details li {
+  float: left;
+  padding: 30px;
+  padding-left: 0%;
+}
+#profile-t {
+  font-size: 16px;
+  padding-left: 40px;
+}
+.profile-sec {
+  padding-right: 20px;
+}
+#profile-texts {
+  padding-left: 40px;
+}
+#individual-posts {
+  border-top: 1px solid rgb(202, 202, 202);
+  margin-left: 50px;
+  margin-right: 150px;
+  margin-top: 50px;
+  padding-right: 0px;
+}
+#post_head {
+  margin-left: 200px;
+  margin-bottom: 30px;
+}
+#post_head li {
+  float: left;
+  padding-top: 15px;
+  padding-left: 50px;
+}
+#single-image {
+  height: 290px;
+  width: 290px;
+  margin: 10px;
+}
