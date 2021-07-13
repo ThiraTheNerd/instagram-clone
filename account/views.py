@@ -22,13 +22,3 @@ def profile(request, username):
 
 def edit_profile(request):
     return render(request, "registration/update_profile.html")
-
-
-def search_results(request):
-    if "user" in request.GET and request.GET["user"]:
-        search_term = request.GET.get("user")
-        try:
-            searched_user = Profile.search_results(search_term)
-        except ObjectDoesNotExist:
-            raise Http404()
-        return redirect(profile, username=search_term)

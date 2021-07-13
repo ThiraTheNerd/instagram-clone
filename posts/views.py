@@ -22,3 +22,17 @@ def index(request):
     posts = Post.objects.all()
     users = Profile.objects.all()
     return render(request, "index.html", {"posts": posts, "users": users})
+
+
+def search_results(request):
+    if "user" in request.GET and request.GET["user"]:
+        search_term = request.GET.get("user")
+        try:
+            searched_user = Profile.search_by_name(search_term)
+            posts = searched_user.posts.all()
+            print(posts)
+        except ObjectDoesNotExist:
+            raise Http404()
+        return render(
+            request, "search.html", {"searched_user": searched_user, "posts": posts}
+        )

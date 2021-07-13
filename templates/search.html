@@ -1,0 +1,50 @@
+{%extends "base.html"%}
+{% load bootstrap3 %}
+{% load static %}
+{% block content %}
+{% include "navbar.html" %}
+
+<div class="profile" >
+  <div class="row">
+    <div class="col-md-4" id= "profile">
+      <img src="{% static 'photos/friends.jpg'%}" id="profile_pic">
+    </div>
+    <div class="col-md-8 profile-sec" id= "profile">
+      <ul class="profile-btns">
+        <li><h3 id="profile-texts">{{profile.user.username}}</h3></li>
+        {% if profile.user and user.is_authenticated %}
+        <li><a href="{% url 'edit_profile'%}" class="btn btn-lg" id="edit-profile"> Edit Profile</a></li>
+        {% else %}
+        <li><button type="button" class="btn btn-primary btn-sm">Follow Back</button></li>
+        <li><a class="btn btn-sm"> Edit Profile</a></li>
+        {% endif %}
+      </ul>
+      <ul id="profile_details">
+        <li><b>{{posts.count }} </b> Posts</li>
+        <li><b>12 </b> Followers</li>
+        <li><b>12 </b> Following</li>
+      </ul>
+      <br style="clear:both" />
+      <!-- <b id="profile-t">{{profile.user.username}}</b> -->
+      <div class="bio-section">
+        <p id ='profile-t'>{{profile.bio}}</p>
+      </div>
+    </div>
+  </div>
+  <br style="clear:both" />
+  <div class="container" id="individual-posts">
+    <ul id="post_head">
+      <li>POSTS</li>
+      <li>REELS</li>
+      <li>IGTV</li>
+      <li>TAGGED</li>
+    </ul>
+    <br style="clear:both" />
+    <div class="flex-row">
+      {% for post in posts %}
+      <a><img src="{{post.image.url }}" id="single-image"></a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}
