@@ -64,6 +64,9 @@ ul {
 #search-form {
   padding-left: 50px;
   margin-top: 15px;
+  color: rgba(var(--f52, 142, 142, 142), 1);
+  text-align: center;
+  border: 0 solid #000;
 }
 .navbar {
   position: fixed;
@@ -207,13 +210,14 @@ ul {
   width: 180px;
   object-fit: fill;
   border-radius: 120px;
-  margin-left: 200px;
+  margin-left: 130px;
 }
 
 #profile_details li {
   float: left;
-  padding: 30px;
+  padding-right: 30px;
   padding-left: 0%;
+  padding-bottom: 20px;
 }
 #profile-t {
   font-size: 16px;
@@ -222,9 +226,23 @@ ul {
 .profile-sec {
   padding-right: 20px;
 }
-#profile-texts {
-  padding-left: 40px;
+
+.profile-btns li {
+  display: inline-block;
 }
+#profile-texts {
+  margin-right: 20px;
+}
+#edit-profile {
+  border: 1px solid rgba(var(--ca6, 219, 219, 219), 1);
+  color: rgba(var(--f75, 38, 38, 38), 1);
+  margin-bottom: 8px;
+  margin-right: 20px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 #individual-posts {
   border-top: 1px solid rgb(202, 202, 202);
   margin-left: 50px;

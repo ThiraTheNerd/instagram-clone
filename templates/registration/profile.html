@@ -10,7 +10,15 @@
       <img src="{% static 'photos/friends.jpg'%}" id="profile_pic">
     </div>
     <div class="col-md-8 profile-sec" id= "profile">
-      <h3 id="profile-texts">{{profile.user.username}}</h3>
+      <ul class="profile-btns">
+        <li><h3 id="profile-texts">{{profile.user.username}}</h3></li>
+        {% if profile.user and user.is_authenticated %}
+        <li><a href="{% url 'edit_profile'%}" class="btn btn-lg" id="edit-profile"> Edit Profile</a></li>
+        {% else %}
+        <li><button type="button" class="btn btn-primary btn-sm">Follow Back</button></li>
+        <li><a class="btn btn-sm"> Edit Profile</a></li>
+        {% endif %}
+      </ul>
       <ul id="profile_details">
         <li><b>{{posts.count }} </b> Posts</li>
         <li><b>12 </b> Followers</li>

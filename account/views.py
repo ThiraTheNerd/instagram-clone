@@ -11,11 +11,14 @@ from django.core.exceptions import ObjectDoesNotExist
 def profile(request, username):
     user = User.objects.get(username=username)
     try:
-        profile = Profile.objects.get(id=user.id)
+        profile = Profile.objects.get(user=user.id)
         posts = profile.posts.all()
-        print(profile.posts.all().count())
     except ObjectDoesNotExist:
         raise Http404()
     return render(
         request, "registration/profile.html", {"profile": profile, "posts": posts}
     )
+
+
+def edit_profile(request):
+    return render(request, "registration/update_profile.html")

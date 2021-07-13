@@ -11,27 +11,27 @@
 <nav class="navbar">
   
     <div class="col-md-4">
-      <img src="{% static 'photos/logo.png'%}" id="img-logo">
+     <a href="{%url 'index'%}" > <img src="{% static 'photos/logo.png'%}" id="img-logo"></a>
     </div>
     {% if user.is_authenticated %}
     <div class="col-md-4">
       <form id="search-form">
-        <input type="search" placeholder="search">
+        <input type="search" placeholder="search" id="nav-search">
       </form>
     </div>
     <div class="col-md-4">
       <ul id="navbar-list">
-        <li><a><img src="{% static 'photos/house-black-silhouette-without-door.png'%}"></a></li>
+        <li><a href="{% url 'index'%}"><img src="{% static 'photos/house-black-silhouette-without-door.png'%}"></a></li>
         <li><a><img src="{% static 'photos/send.png'%}"></a></li>
         <li><a><img src="{% static 'photos/direction.png'%}"></a></li>
         <li><a><img src="{% static 'photos/heart.png'%}"></a></li>
         <li class="dropdown-toggle" id="user-info" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><a>
           <img src="{% static 'photos/user.png'%}"></a></li>
           <div class="dropdown-menu" aria-labelledby="user-info" id="logout-dropdown">
-            <!-- <a class="dropdown-item" href="">Profile</a>
-            <a class="dropdown-item" href="">Saved</a>
+            <a class="dropdown-item" href="/profile/{{user.username}}">Profile</a>
+            <!-- <a class="dropdown-item" href="">Saved</a>
             <a class="dropdown-item" href="">Settings</a>
-            <a class="dropdown-item" href="">Switch Accounts</a> -->
+            <a class="dropdown-item" href="">Switch Accounts</a>  -->
             <hr>
             <a class="dropdown-item" href="/logout">Log Out</a>
           </div>
