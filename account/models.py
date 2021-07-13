@@ -20,6 +20,12 @@ class Profile(models.Model):
         self.save()
 
     @classmethod
+    def search_results(cls, search):
+        user = User.objects.filter(username__icontains=search)
+        profile = Profile.objects.filter(user=user.id)
+        return profile
+
+    @classmethod
     def delete_profile(cls, id):
         delete = Profile.objects.filter(id=id).delete()
         return True

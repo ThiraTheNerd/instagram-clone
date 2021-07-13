@@ -23,7 +23,6 @@ ul {
   width: 150px;
   height: 60px;
   object-fit: fill;
-  justify-self: center;
 }
 #registration-form {
   border: #999 1px solid;
@@ -62,11 +61,16 @@ ul {
   border: 1px solid black;
 } */
 #search-form {
-  padding-left: 50px;
+  padding-left: 20px;
   margin-top: 15px;
   color: rgba(var(--f52, 142, 142, 142), 1);
   text-align: center;
   border: 0 solid #000;
+}
+#nav-search {
+  border: 1px solid rgba(var(--ca6, 219, 219, 219), 1);
+  text-align: center;
+  padding: 5px;
 }
 .navbar {
   position: fixed;
