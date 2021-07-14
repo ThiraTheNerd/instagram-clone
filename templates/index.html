@@ -12,13 +12,16 @@
       <div class="container" id="single-post">
         <div class="card-header" id="post-header">
           <ul id="post-interactivity">
-            <li><a><img src="{% static 'photos/post.jpeg' %}" id="post-logo"></a></li>
+            <li><a>
+              <img src="https://source.unsplash.com/125x125/?profile,photo" id="post-logo"></a></li>
             <li><a><h5>{{post.user.username}}</h5></a></li>
           </ul>
           <a><img src="{% static 'photos/three-dots-more-indicator.png'%}" id="three-dots"></a>
         </div>
         <div class="">
-          <img src="{{post.image.url}}" id="image-post" alt="post-image">
+          <a href="">
+            <img src="{{post.image.url}}" id="image-post" alt="post-image">
+          </a>
         </div>
           <ul id="post-interactivity">
             <li><a><img src="{% static 'photos/heart.png'%}"></a></li>
@@ -26,6 +29,21 @@
             <li><a><img src="{%static 'photos/send.png'%}"></a></li>
           </ul>
           <img src="{% static 'photos/bookmark-white.png'%}" id="bookmark-image">
+          <!-- <br style="clear:both" /> -->
+          <h5>22 likes</h5>
+          <div class="card-text">
+            <span class="username">Julia </span>
+            <span class="caption">Wow so beautiful</span>
+          </div>
+          <h5>
+            <a
+              class="text-decoration-none"
+              href=""
+            >View all comments
+            </a>
+          </h5>
+          <span class="text-muted">{{post.created}}</span>
+          <h5>{{post.post_date}}</h5>
           <div class="comment-section">
             <img src="{% static 'photos/smile.png'%}" id="smile-pic">
             <form id="comment-form">

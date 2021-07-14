@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Post
 from account.models import Profile
@@ -21,6 +21,7 @@ def index(request):
     """
     posts = Post.objects.all()
     users = Profile.objects.all()
+
     return render(request, "index.html", {"posts": posts, "users": users})
 
 
@@ -36,3 +37,6 @@ def search_results(request):
         return render(
             request, "search.html", {"searched_user": searched_user, "posts": posts}
         )
+
+def new_comment(self):
+    

@@ -24,7 +24,6 @@ class Profile(models.Model):
         user = User.objects.filter(username__icontains=search)
         print(user)
         profile = Profile.objects.get(user=user)
-        print(profile)
         return profile
 
     @classmethod
