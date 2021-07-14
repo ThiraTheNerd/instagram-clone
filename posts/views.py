@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from .models import Post
+from .models import Post, Comment
 from account.models import Profile
 from django.core.exceptions import ObjectDoesNotExist
 from django.http.response import Http404
@@ -38,5 +38,12 @@ def search_results(request):
             request, "search.html", {"searched_user": searched_user, "posts": posts}
         )
 
-def new_comment(self):
-    
+
+def new_comment(request, post_id):
+    current_user = request.user
+    if request.method == "POST":
+        comment = request.POST.get("comment")
+    post = Post.objects.get(id=post_id)
+    user_profile = User.objects.get(username=current_user.username)
+    Comment.objects.create(comment=comment, post=post, user=user_profile)
+    return redirect("index")

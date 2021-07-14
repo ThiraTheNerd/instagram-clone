@@ -128,14 +128,7 @@ ul {
   padding-left: 0%;
   object-fit: fill;
 }
-#image-modal {
-  height: 550px;
-  width: 350px;
-  object-fit: cover;
-}
-#modal-details {
-  margin-left: 60px;
-}
+
 #post-interactivity {
   display: inline-flex;
   margin-top: 5px;
@@ -159,24 +152,30 @@ ul {
   margin-top: 0;
   border-top: 1px solid rgb(202, 202, 202);
   background-color: white;
+  margin-bottom: 15px;
 }
 #smile-pic {
   position: absolute;
   padding-top: 10px;
 }
-#comment-form {
-  position: absolute;
+.input-group {
   margin-left: 30px;
+  margin-bottom: 5px;
+  border: 1px solid #000;
 }
 #comment-form input {
+  position: absolute;
   height: 40px;
   width: 450px;
   border: 1px solid white;
 }
 #post {
+  margin-left: 450px;
+  position: absolute;
   float: right;
   padding-top: 10px;
 }
+
 #suggestions {
   position: fixed;
   right: 20px;

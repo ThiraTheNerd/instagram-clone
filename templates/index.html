@@ -46,10 +46,13 @@
           <h5>{{post.post_date}}</h5>
           <div class="comment-section">
             <img src="{% static 'photos/smile.png'%}" id="smile-pic">
-            <form id="comment-form">
-              <input type="text" placeholder="Comment">
+            <form action="{% url 'new_comment' post.id %}" method="POST">
+              {%csrf_token%}
+              <div class="input-group" id="comment-form">
+                <input type="text" placeholder="Comment" name="comment">
+                <a type="submit" id="post">Post</a>
+              </div>
             </form>
-            <p><a id="post">Post</a></p>
           </div> 
       </div>
     {% empty %}
