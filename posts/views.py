@@ -25,6 +25,12 @@ def index(request):
     return render(request, "index.html", {"posts": posts, "users": users})
 
 
+def view_post(request, pk):
+    post = Post.objects.get(id=pk)
+    print(post)
+    return render(request, "posts/single-post.html")
+
+
 def search_results(request):
     if "user" in request.GET and request.GET["user"]:
         search_term = request.GET.get("user")
@@ -46,4 +52,4 @@ def new_comment(request, post_id):
     post = Post.objects.get(id=post_id)
     user_profile = User.objects.get(username=current_user.username)
     Comment.objects.create(comment=comment, post=post, user=user_profile)
-    return redirect("index")
+    return redirect("view_post", pk=post_id)

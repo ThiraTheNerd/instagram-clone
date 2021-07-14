@@ -19,7 +19,7 @@
           <a><img src="{% static 'photos/three-dots-more-indicator.png'%}" id="three-dots"></a>
         </div>
         <div class="">
-          <a href="">
+          <a href="post/{{post.id}}">
             <img src="{{post.image.url}}" id="image-post" alt="post-image">
           </a>
         </div>
@@ -46,11 +46,12 @@
           <h5>{{post.post_date}}</h5>
           <div class="comment-section">
             <img src="{% static 'photos/smile.png'%}" id="smile-pic">
-            <form action="{% url 'new_comment' post.id %}" method="POST">
+            <form action="/new-comment/{{post.id}}" method="POST">
               {%csrf_token%}
               <div class="input-group" id="comment-form">
                 <input type="text" placeholder="Comment" name="comment">
-                <a type="submit" id="post">Post</a>
+                <button type="submit" id="post">Post</button>
+              
               </div>
             </form>
           </div> 
