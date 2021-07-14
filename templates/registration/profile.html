@@ -1,5 +1,6 @@
 {%extends "base.html"%}
 {% load bootstrap3 %}
+{% load crispy_forms_tags %}
 {% load static %}
 {% block content %}
 {% include "navbar.html" %}
@@ -11,15 +12,29 @@
     </div>
     <div class="col-md-8 profile-sec" id= "profile">
       <ul class="profile-btns">
-        {% if profile.user and user.is_authenticated %}
+        {% if profile.user == currentuser %}
         <li><h3 id="profile-texts">{{profile.user.username}}</h3></li>
-        <li><a href="{% url 'edit_profile'%}" class="btn btn-lg" id="edit-profile"> Edit Profile</a></li>
+        <li><a data-toggle="modal" data-target="#myModal" class="btn btn-lg" id="edit-profile"> Edit Profile</a></li>
         {% else %}
         <li><h3 id="profile-texts">{{profile.user.username}}</h3></li>
         <li><button type="button" class="btn btn-primary btn-sm">Follow Back</button></li>
         
         {% endif %}
       </ul>
+      <div class="modal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <h3 class="text-center">Update Profile</h3>
+            <form method="POST" enctype="multipart/form-data" action="">
+            {% csrf_token %}
+            {{ user_form|crispy }}
+            <br>
+            {{ profile_form|crispy}}
+            </form>
+
+          </div>
+        </div>
+      </div>
       <ul id="profile_details">
         <li><b>{{posts.count }} </b> Posts</li>
         <li><b>12 </b> Followers</li>
@@ -31,6 +46,7 @@
         <p id ='profile-t'>{{profile.bio}}</p>
       </div>
     </div>
+
   </div>
   <br style="clear:both" />
   <div class="container" id="individual-posts">

@@ -69,6 +69,7 @@ INSTALLED_APPS = [
     "bootstrap3",
     "posts",
     "tinymce",
+    "crispy_forms",
 ]
 
 MIDDLEWARE = [

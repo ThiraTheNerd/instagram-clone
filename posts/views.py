@@ -21,13 +21,22 @@ def index(request):
     """
     posts = Post.objects.all()
     users = Profile.objects.all()
+    all_comments = Comment.objects.all()
 
-    return render(request, "index.html", {"posts": posts, "users": users})
+    return render(
+        request,
+        "index.html",
+        {"posts": posts, "users": users, "all_comments": all_comments},
+    )
 
 
+@login_required(login_url="/accounts/login/")
 def view_post(request, pk):
-    post = Post.objects.get(id=pk)
-    print(post)
+    try:
+        post = Post.objects.get(id=pk)
+        print(post)
+    except ObjectDoesNotExist:
+        raise Http404()
     return render(request, "posts/single-post.html")
 
 
