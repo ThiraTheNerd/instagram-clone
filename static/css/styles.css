@@ -31,6 +31,12 @@ ul {
 #signup-btn {
   padding: 0;
 }
+.instapic {
+  max-width: 454px;
+  max-height: 618px;
+  margin-top: 30px;
+  margin-left: 60px;
+}
 #login-option {
   margin-top: 20px;
   border: #999 1px solid;
@@ -38,6 +44,20 @@ ul {
   padding-top: 30px;
   padding-bottom: 30px;
   text-align: center;
+}
+#loginform {
+  margin-top: 120px;
+  margin-left: 150px;
+}
+.getapp {
+  width: 130px;
+  margin-top: 10px;
+}
+.loginslorextra2 {
+  padding: 15px;
+  border: 2px solid rgba(128, 128, 128, 0.59);
+  width: 330px;
+  margin-left: 40px;
 }
 
 #navbar-list {
