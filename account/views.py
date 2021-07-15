@@ -31,6 +31,10 @@ def profile(request, username):
             user_form.save()
             profile_form.save()
             messages.success(request, ("Your profile was successfully updated!"))
+        return redirect(profile)
+    else:
+        user_form = UserForm(instance=request.user)
+        profile_form = ProfileForm(instance=request.user)
     return render(
         request,
         "registration/profile.html",
