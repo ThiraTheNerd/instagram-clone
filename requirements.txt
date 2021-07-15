@@ -11,7 +11,7 @@ django-bootstrap3==10.0.0
 django-crispy-forms==1.12.0
 django-heroku==0.3.1
 django-registration==2.4.1
-django-tinymce==3.3.0
+django-tinymce==3.0.1
 mypy-extensions==0.4.3
 pathspec==0.8.1
 Pillow==8.3.1
