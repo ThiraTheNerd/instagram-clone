@@ -165,9 +165,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-django_heroku.settings(locals())
 
 LOGIN_REDIRECT_URL = "/"
 LOGIN_URL = reverse_lazy("login")
 LOGOUT_URL = reverse_lazy("logout")
 LOGOUT_REDIRECT_URL = "/"
+django_heroku.settings(locals())
