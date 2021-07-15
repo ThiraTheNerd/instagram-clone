@@ -16,11 +16,20 @@ import django_heroku
 import dj_database_url
 from decouple import config, Csv
 from django.core.urlresolvers import reverse_lazy
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# adding config
+cloudinary.config(
+    cloud_name="playboard",
+    api_key="742327432827324",
+    api_secret="TZ48ji3v1taWruQscfUgVpl06C0",
+)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -70,6 +79,7 @@ INSTALLED_APPS = [
     "posts",
     "tinymce",
     "crispy_forms",
+    "cloudinary",
 ]
 
 MIDDLEWARE = [

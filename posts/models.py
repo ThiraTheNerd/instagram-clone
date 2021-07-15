@@ -2,10 +2,11 @@ from django.db import models
 from django.db.models.deletion import CASCADE
 from tinymce.models import HTMLField
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 
 class Post(models.Model):
-    image = models.ImageField(upload_to="posts/")
+    image = CloudinaryField("image")
     caption = HTMLField()
     user = models.OneToOneField(User, on_delete=CASCADE)
     post_date = models.DateTimeField(auto_now_add=True)
