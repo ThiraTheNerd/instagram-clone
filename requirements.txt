@@ -1,11 +1,14 @@
 appdirs==1.4.4
 asgiref==3.4.1
 black==21.6b0
+certifi==2021.5.30
 click==8.0.1
+cloudinary==1.26.0
 confusable-homoglyphs==3.2.0
 dj-database-url==0.5.0
 Django==1.11.17
 django-bootstrap3==10.0.0
+django-crispy-forms==1.12.0
 django-heroku==0.3.1
 django-registration==2.4.1
 django-tinymce==3.3.0
@@ -16,6 +19,8 @@ psycopg2==2.9.1
 python-decouple==3.4
 pytz==2021.1
 regex==2021.7.6
+six==1.16.0
 sqlparse==0.4.1
 toml==0.10.2
+urllib3==1.26.6
 whitenoise==5.2.0
