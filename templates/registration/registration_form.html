@@ -2,10 +2,10 @@
 {% load static %}
 {% block content %}
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-4">
     <img src="{% static 'photos/insta-screen.png' %}" alt="instagram landing pic" class="img-fluid regphones">
   </div>
-  <div class="col-md-6" id="form-col">
+  <div class="col-md-8" id="form-col">
     {% if form %}
     <form action="/accounts/register/" class="register-form" method="post" id="registration-form">
       {% csrf_token %}
@@ -24,9 +24,9 @@
       </div>
     </form>
     {% endif %}
-    <!-- <div class="container" id="login-option">
+    <div class="container" id="login-option">
       <p>Have an account? <a href="{% url 'login' %}">Log In </a></p>
-    </div> -->
+    </div>
     
   </div>
 </div>

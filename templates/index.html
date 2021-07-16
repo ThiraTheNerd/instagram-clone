@@ -14,7 +14,7 @@
           <ul id="post-interactivity">
             <li><a>
               <img src="https://source.unsplash.com/125x125/?profile,photo" id="post-logo"></a></li>
-            <li><a href="/profile/{{user.username}}"><h5>{{post.user.username}}</h5></a></li>
+            <li><a href="{% url 'profile' post.user.username %}"><h5>{{post.user.username}}</h5></a></li>
           </ul>
           <a><img src="{% static 'photos/three-dots-more-indicator.png'%}" id="three-dots"></a>
         </div>
