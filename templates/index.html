@@ -24,13 +24,19 @@
           </a>
         </div>
           <ul id="post-interactivity">
-            <li><a><img src="{% static 'photos/heart.png'%}"></a></li>
+            {% if post.id in already_liked %}
+            <li class="likin"><a name="{{post.id}}"style="font-size:24px;color: red;">
+              <i class="fa fa-heart"aria-hidden="true"></i></a></li>
+            {%else %}
+            <li class="likin"><a name="{{post.id}}" style="font-size:24px;color: black;" class="likin">
+              <i class="fa fa-heart"></i></a></li>
+            {% endif %}
             <li><a><img src="{%static 'photos/chat.png'%}"></a></li>
             <li><a><img src="{%static 'photos/send.png'%}"></a></li>
           </ul>
           <img src="{% static 'photos/bookmark-white.png'%}" id="bookmark-image">
           <!-- <br style="clear:both" /> -->
-          <h5>22 likes</h5>
+          <h5>{{post.likes.count }} Likes</h5>
           {% for comment in all_comments %}
           <!--Filter comments for this specific ID -->
           {% if comment.post.id == post.id %} 
@@ -98,4 +104,7 @@
     
   </div>
 </div>
+{% endblock %}
+{% block scripts %} {{block.super}}
+  <script type="text/javascript" src="{%static 'js/index.js'%}"></script>
 {% endblock %}

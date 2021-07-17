@@ -4,30 +4,52 @@ from django.contrib.auth.decorators import login_required
 from .models import Post, Comment
 from account.models import Profile
 from django.core.exceptions import ObjectDoesNotExist
-from django.http.response import Http404
+from django.http.response import Http404, HttpResponse
 from account.views import profile
+import json
+from django.views.decorators.csrf import csrf_exempt
+
 
 # Create your views here.
 # Create your views here.
 @login_required(login_url="/accounts/login/")
+@csrf_exempt
 def index(request):
     """
     Function that returns the index page
-    try:
-    editor = Editor.objects.get(email = 'example@gmail.com')
-    print('Editor found')
-    except DoesNotExist:
-    print('Editor was not found')
     """
+    if request.method == "POST":
+        if request.POST.get("operation") == "like_submit" and request.is_ajax():
+            content_id = request.POST.get("content_id", None)
+            content = get_object_or_404(Post, pk=content_id)
+            if content.likes.filter(id=request.user.id):
+                content.likes.remove(request.user)
+                liked = False
+            else:
+                content.likes.add(request.user)
+                liked = True
+            ctx = {
+                "likes_count": content.total_likes,
+                "liked": liked,
+                "content_id": content_id,
+            }
+            return HttpResponse(json.dumps(ctx), content_type="application/json")
+
     posts = Post.objects.all()
     users = Profile.objects.all()
     all_comments = Comment.objects.all()
-
-    return render(
-        request,
-        "index.html",
-        {"posts": posts, "users": users, "all_comments": all_comments},
-    )
+    already_liked = []
+    id = request.user.id
+    for post in posts:
+        if post.likes.filter(id=id).exists():
+            already_liked.append(post.id)
+    ctx = {
+        "posts": posts,
+        "users": users,
+        "all_comments": all_comments,
+        "already_liked": already_liked,
+    }
+    return render(request, "index.html", ctx)
 
 
 @login_required(login_url="/accounts/login/")

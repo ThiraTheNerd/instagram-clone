@@ -7,9 +7,13 @@ from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 from .forms import UserForm, ProfileForm
 from django.contrib import messages
+from registration.backends.simple.views import RegistrationView
 
 
-@login_required(login_url="accounts/login")
+class MyRegistrationView(RegistrationView):
+    def get_success_url(self, request, user):
+        return "/"
+
 
 # Create your views here.
 @login_required(login_url="accounts/login")
