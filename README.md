@@ -110,8 +110,8 @@ Open the application on your browser `127.0.0.1:8000`.
 
 ### Access Django Admin
 
-> > > Username: u20969
-> > > Password: igclone2020
+> > > Username: admin
+> > > Password: admin2021
 
 ## Technology used
 
